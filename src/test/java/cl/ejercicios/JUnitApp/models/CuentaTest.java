@@ -16,5 +16,22 @@ public class CuentaTest {
 		
 		Assertions.assertEquals(loEsperado, loObtenido);
 	}
-
+	
+	@Test
+	void testReferenciaCuenta() {
+		
+		//¿son iguales?
+		Cuenta cuenta = new Cuenta("seba", new BigDecimal("15000.00405050"));
+		Cuenta cuenta2 = new Cuenta("seba", new BigDecimal("15000.00405050"));
+		
+		//comparacion de dos registros similares.
+		Assertions.assertEquals(cuenta, cuenta2);
+	}
+	
+	
+	@Test
+	void testSaldoCuenta() {
+		Cuenta cuenta = new Cuenta("seba", new BigDecimal("15000.00405050"));
+		Assertions.assertEquals(15000.00405050,cuenta.getSaldo().doubleValue());
+	}
 }
